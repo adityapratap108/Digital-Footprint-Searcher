@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footprint Searcher | OSINT Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-fingerprint logo-icon"></i>
+            <h2>Digital Footprint <span>Searcher</span></h2>
+            <p>Trace online presence across the web</p>
+        </div>
+
+        <div class="search-box">
+            <div class="input-group">
+                <i class="fas fa-at"></i>
+                <input type="text" id="username" placeholder="Enter target username...">
+            </div>
+            <button onclick="performSearch()">
+                <i class="fas fa-search"></i> Search Target
+            </button>
+        </div>
+        <div id="loading" class="loading hidden">
+            <i class="fas fa-spinner fa-spin"></i>
+            <span id="progress-text">Scanning platforms...</span>
+        </div>
+
+        <div id="results"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
